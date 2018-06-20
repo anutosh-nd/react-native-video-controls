@@ -91,6 +91,7 @@ export default class VideoPlayer extends Component {
             onLoad: this._onLoad.bind( this ),
             onPause: this.props.onPause,
             onPlay: this.props.onPlay,
+            onBuffer : this.props.onBuffer || this._onBuffer.bind( this )
         };
 
         /**
@@ -229,6 +230,12 @@ export default class VideoPlayer extends Component {
      * new page.
      */
     _onEnd() {}
+
+    /**
+     * It is suggested that you override this
+     * command so your app knows what to do.
+     */
+    _onBuffer() {}
 
     /**
      * Set the error state to true which then
